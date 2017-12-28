@@ -32,6 +32,11 @@ const htmlConfig = {
   dest: dirs.dest
 };
 
+const fontConfig = {
+  src: dirs.src+'/fonts/*',
+  dest: dirs.dest+'/fonts'
+};
+
 gulp.task('styles', () => {
   gulp.src(stylesConfig.src)
     .pipe(sass({
@@ -44,8 +49,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', function(){
     gulp.src(scriptsConfig.src)
     .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
-        .on('error', gutil.log)
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(scriptsConfig.dest))
     .pipe(connect.reload());
@@ -67,6 +71,12 @@ gulp.task('html', function() {
   .pipe(connect.reload());
 });
 
+gulp.task('fonts', function() {
+  gulp.src(fontConfig.src)
+  .pipe(gulp.dest(fontConfig.dest))
+  .pipe(connect.reload());
+});
+
 gulp.task('server', function () {
   connect.server({
     root: ['./dist'],
@@ -80,7 +90,8 @@ gulp.task('watch', function () {
   gulp.watch(scriptsConfig.src, ['scripts']);
   gulp.watch(imagesConfig.src, ['images']);
   gulp.watch(htmlConfig.src, ['html']);
+  gulp.watch(fontConfig.src, ['fonts']);
 });
 
-gulp.task('default', ['scripts', 'styles', 'images', 'html', 'server', 'watch']);
-gulp.task('build', ['scripts', 'styles', 'images', 'html']);
+gulp.task('default', ['scripts', 'styles', 'images', 'html', 'fonts', 'server', 'watch']);
+gulp.task('build', ['scripts', 'styles', 'images', 'html', 'fonts']);
