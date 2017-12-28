@@ -1,0 +1,22 @@
+{
+  "name": "gulp-frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "Frontend development using gulp (scss, pug)",
+  "author": "Buyung A",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-pug": "^3.3.0"
+  }
+}
