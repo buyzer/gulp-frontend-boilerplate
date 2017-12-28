@@ -61,7 +61,7 @@ gulp.task('images', function() {
 gulp.task('html', function() {
   gulp.src(htmlConfig.src)
   .pipe(pug({
-    pretty:' '
+    pretty:'\t'
   }))
   .pipe(gulp.dest(htmlConfig.dest))
   .pipe(connect.reload());
