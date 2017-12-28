@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Frontend development using gulp (scss, pug)",
   "author": "Buyung A",
+  "keywords": "frontend boilerplate, gulp, pug, gulp pug, sass, scss",
   "license": "MIT",
-  "private": true,
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/buyzer/gulp-frontend-boilerplate.git"
+  },
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
